@@ -1,0 +1,225 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Gang Flavors</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Montserrat,sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#050505;
+position:sticky;
+top:0;
+z-index:100;
+border-bottom:1px solid #222;
+}
+.logo{
+font-family:'Bebas Neue',sans-serif;
+font-size:38px;
+color:#9dff00;
+}
+nav a{
+color:#fff;
+margin:0 12px;
+text-decoration:none;
+font-weight:700;
+font-size:14px;
+}
+.hero{
+padding:70px 20px;
+text-align:center;
+background:radial-gradient(circle at center,#2a001d,#000 60%);
+}
+.hero h1{
+font-family:'Bebas Neue',sans-serif;
+font-size:72px;
+line-height:.9;
+}
+.hero h1 span{color:#ff1d1d}
+.hero p{
+margin-top:18px;
+font-size:20px;
+color:#ddd;
+}
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:16px 34px;
+background:#ff1d1d;
+color:#fff;
+text-decoration:none;
+font-weight:700;
+border-radius:8px;
+box-shadow:0 0 18px #ff1d1d;
+}
+.timer{
+padding:30px 20px;
+text-align:center;
+font-size:34px;
+font-weight:700;
+color:#9dff00;
+}
+.section-title{
+text-align:center;
+font-family:'Bebas Neue',sans-serif;
+font-size:48px;
+margin:10px 0 30px;
+}
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:0 20px 60px;
+}
+.card{
+background:#111;
+border:1px solid #222;
+border-radius:14px;
+padding:18px;
+text-align:center;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 18px #9dff00;
+}
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
+}
+.card h3{
+font-size:22px;
+margin-bottom:10px;
+}
+.price{
+color:#ff1d1d;
+font-size:24px;
+font-weight:700;
+margin-bottom:14px;
+}
+.buy{
+display:inline-block;
+padding:12px 22px;
+border:2px solid #9dff00;
+color:#9dff00;
+text-decoration:none;
+border-radius:8px;
+font-weight:700;
+}
+.cta{
+margin:20px;
+padding:40px 20px;
+text-align:center;
+background:#0a0a0a;
+border:1px solid #222;
+border-radius:18px;
+}
+footer{
+margin-top:40px;
+padding:30px 20px;
+text-align:center;
+color:#888;
+border-top:1px solid #222;
+}
+@media(max-width:700px){
+.hero h1{font-size:54px}
+nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">MG FLAVORS</div>
+<nav>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Flavors</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>MOTION <span>GANG</span><br>FLAVORS</h1>
+<p>Bold Flavor. Top Shelf. Pure Terps.</p>
+<a href="#" class="btn">PRE ORDER NOW</a>
+</section>
+
+<section class="timer" id="countdown">
+Drops July 11th
+</section>
+
+<h2 class="section-title">Top Flavors</h2>
+
+<section class="products">
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300?text=Cookies+N+Cream">
+<h3>Cookies N Cream</h3>
+<div class="price">$50</div>
+<a href="#" class="buy">ADD TO CART</a>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300?text=Cherry+Punch">
+<h3>Cherry Punch Candy</h3>
+<div class="price">$50</div>
+<a href="#" class="buy">ADD TO CART</a>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300?text=Blue+Razz">
+<h3>Blue Razz Blast</h3>
+<div class="price">$50</div>
+<a href="#" class="buy">ADD TO CART</a>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300x300?text=5G+Disposable">
+<h3>5G Disposable</h3>
+<div class="price">$35</div>
+<a href="#" class="buy">ADD TO CART</a>
+</div>
+
+</section>
+
+<section class="cta">
+<h2 class="section-title">Lock In Your Flavor</h2>
+<p>Pre order today & be first to experience Motion Gang Flavors.</p>
+<a href="#" class="btn">CHECKOUT NOW</a>
+</section>
+
+<footer>
+© 2026 Motion Gang Flavors • motiongangflavors.vercel.app
+</footer>
+
+<script>
+const countDate = new Date("July 11, 2026 00:00:00").getTime();
+setInterval(()=>{
+const now = new Date().getTime();
+const gap = countDate - now;
+const d = Math.floor(gap/(1000*60*60*24));
+const h = Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+const m = Math.floor((gap%(1000*60*60))/(1000*60));
+const s = Math.floor((gap%(1000*60))/1000);
+document.getElementById("countdown").innerHTML =
+d+" Days "+h+" Hours "+m+" Min "+s+" Sec";
+},1000);
+</script>
+
+</body>
+</html>
